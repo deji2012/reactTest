@@ -1,0 +1,28 @@
+{
+  "name": "vue3test2",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@antv/x6": "^2.5.6",
+    "@antv/x6-vue-shape": "^2.0.10",
+    "@vuepress/markdown": "^1.9.9",
+    "axios": "^1.4.0",
+    "docsify": "^4.13.0",
+    "element-plus": "^2.3.1",
+    "markdown-it": "^13.0.1",
+    "marked": "^5.1.0",
+    "typescript": "^5.0.2",
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vite": "^4.3.9",
+    "vite-plugin-md": "^0.21.5"
+  },
+  "type": "module"
+}
