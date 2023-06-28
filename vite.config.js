@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
 import md from 'vite-plugin-md';
-console.log('first')
 export default defineConfig({
     server: {
         port: 8080,
@@ -19,11 +18,21 @@ export default defineConfig({
             },
         },
     },
-    plugins: [vue({
-        include: [/\.vue$/, /\.md$/]
-    }), md({
-        builders: []
-    })],
+    plugins: [
+        vue(
+            {
+                include: [/\.vue$/, /\.md$/]
+            }
+        ),
+        md({ builders: [] }),
+    ],
+    css: {
+        preprocessorOptions: {
+            less: {
+                javascriptEnabled: true,
+            },
+        },
+    },
     resolve: {
         alias: [
             {
@@ -44,4 +53,16 @@ export default defineConfig({
             },
         ],
     },
+    module: {
+        rules: [
+          {
+            test: /\.md$/,
+            use: [
+              {
+                loader: 'raw-loader',
+              },
+            ],
+          },
+        ],
+      },
 });
